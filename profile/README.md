@@ -1,3 +1,4 @@
+![CSG 3253 Game Systems Development ](imgs/CSG-3523-Logo.jpg)
 ## CSG 3523 Game Systems Development
 Game Systems Development delves into advanced programming techniques and optimization strategies essential for game and simulation development. Focusing on developing various game systems and utilities that enhance the game mechanics and gameplay. Students will not only comprehend but also apply and evaluate these concepts in practical scenarios. Emphasizing modular system development, the course underscores the importance of decoupling scripts to enhance scalability and maintainability. Through hands-on projects and exercises, students will develop their skills in designing, implementing, and optimizing game systems, preparing them for complex challenges in the industry.
 

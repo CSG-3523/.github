@@ -117,7 +117,7 @@ All diagrams must:
 
 ## Submit for Review
 
-Submit your logic diagrams via a **wiki page titled System Architecture** within your project. Your instructor will review your diagrams to evaluate how well your system architecture::
+Submit your logic diagrams via a **wiki page titled System Architecture** within your project. Your instructor will review your diagrams to evaluate how well your system architecture:
 
 -   Represents the core gameplay loop
 -   Breaks the game into modular systems

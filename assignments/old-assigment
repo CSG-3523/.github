@@ -1,0 +1,222 @@
+# Game Design Challenge: Crafting Adventure Game 🪄
+
+In this assignment, you will design and develop a 3D, third-person crafting adventure game where players explore various locations to collect ingredients and craft powerful spells or recipes. Your game should feature two playable levels, a start scene, and an end scene, and it should take approximately 10 to 20 minutes to complete. Players will engage with crafting mechanics, light environmental interactions, and puzzles, providing them with a sense of achievement as they progress through the game.
+
+## ASSIGNMENT CRITERIA
+- **Crafting Mechanics:** The game should allow players to collect ingredients and craft spells or items. Ensure that crafting is integral to gameplay and enhances player engagement.
+- **Game Structure:** The game must include
+   - Two Playable Levels: Each level should present unique crafting challenges and puzzles.
+   - Start Scene: Introduce the game concept and mechanics, setting the tone for the adventure.
+   - End Scene: Provide a satisfying conclusion to the game, celebrating the player’s accomplishments.
+- **Art Assets:** 
+   - You may use art assets that were not created in Unity. Import these assets to enrich the visual experience of your game.
+
+
+## REQUIRED GAME MECHANICS
+
+Your game must incorporate the following key systems and design patterns from your prior learning:
+
+### 1. Crafting System
+- **Purpose:** Handle the crafting process where ingredients are combined to create potions, spells, or other items.
+- **Design Patterns:**
+    - Factory Pattern: Responsible for creating the crafted item based on the recipe and ingredients provided.
+    - Scriptable Objects: Define the crafting recipes, allowing easy updates and management of different crafting combinations.
+    - Observer Pattern: Updates the UI or other systems (e.g., progress indicators) based on the completion of crafting actions.
+- **Features:**
+    - Players select a recipe from their available options.
+    - The system checks if the required ingredients are available in the inventory.
+    - The crafting process produces the desired item (e.g., potion, spell) and updates the player’s inventory accordingly.
+
+### 2. Resource Management System
+- **Purpose:** Manage the collection, storage, and usage of ingredients.
+- **Design Patterns:**
+    - Singleton Pattern: Ensures there’s a single instance managing the player’s inventory across different scenes or areas.
+    - Object Pool Pattern: Reuses ingredient objects to optimize memory and performance, particularly for commonly gathered resources.
+    - Scriptable Objects: Define ingredients and their attributes (e.g., rarity, type, and properties).
+- **Features:**
+    - Players collect ingredients from the environment.
+    - The system tracks ingredient quantities in the player’s inventory.
+    - Object pooling ensures efficient memory usage by reusing ingredient objects when they are collected or used.
+
+### 3. Simple Puzzle System
+   - **Purpose:** Implement basic puzzles that integrate with crafting and exploration.
+   - **Design Patterns:**
+     - **Command Pattern:** Handles puzzle interactions and actions as commands, enabling flexible puzzle mechanics.
+     - **State Pattern:** Manages the different states of puzzles (e.g., solved, unsolved).
+     - **Interface/Abstract Class:** Defines common behaviors for all puzzles, allowing for flexibility and extensibility.
+   - **Features:** Basic puzzles that may provide resources, clues, or other benefits when solved, enhancing crafting progression and exploration. This system could include various types of puzzles that utilize the defined interface and abstract class for shared functionality.
+
+### 4. Interactable System
+   - **Purpose:** Implement useful interactions with various objects in the game world, enhancing gameplay through exploration and engagement.
+   - **Design Patterns:** 
+     - **Interface:** Defines common behaviors for all interactable objects, ensuring that any object can be interacted with consistently.
+     - **Observer Pattern:** Notifies other systems (like the UI or Audio System) about interactions, allowing for real-time updates when a player interacts with an object.
+  - **Features:**
+    - **Interaction Detection:** Players can interact with nearby objects using a specific input (e.g., pressing a key), which triggers the corresponding interaction method.
+    - **Variety of Interactions** Different types of interactable objects (e.g., NPCs, chests, levers) can have unique interaction behaviors while adhering to a common interface.
+    - **Visual Feedback:** Objects provide visual cues to indicate they are interactable, such as highlights or prompts, improving player awareness.
+
+### 5. Scene Management System
+   - **Purpose:** Handle transitions between different locations or scenes within the game.
+   - **Design Patterns:**
+     - **Singleton Pattern:** Manages scene transitions and game state in a centralized manner to ensure smooth loading and saving.
+     - **State Pattern:** Used to manage different states of the game world, such as active or paused scenes.
+   - **Features:** Includes handling scene transitions, saving/loading game progress, and managing scene-specific settings. This is essential for managing the game world’s flow.
+
+### 6. UI System
+   - **Purpose:** Display relevant game information such as crafting progress, inventory, and puzzle status.
+   - **Design Patterns:**
+     - **Observer Pattern:** Updates UI elements based on changes in the game state, such as resource collection or crafting progress.
+   - **Features:** The UI shows real-time updates on the player's inventory, potion crafting progress, and available puzzles, integrating with other systems to provide essential feedback to the player.
+
+### 7. Audio System
+   - **Purpose:** Manage sound effects and background music throughout the game.
+   - **Design Patterns:**
+     - **Singleton Pattern:** Ensures consistent audio management across scenes with a single audio manager instance.
+   - **Features:** Includes background music, sound effects, volume control, and audio settings. This system enhances the immersive experience of the game.
+
+> [!CAUTION]
+> Before starting this project read through the [**ASSIGNMENT GUIDELINES**](https://github.com/csg-utulsa/.github/wiki/ASSIGNMENT-GUIDELINES).
+
+## :bangbang: DELIVERABLES
+
+This project will be completed in stages, each with its own required deliverable to ensure steady progress and iterative refinement. The deliverables include:
+- Gameplay Loop
+- Gameplay Flowchart
+- Game Prototype
+
+Details on each of the deliverables are outlined in the stages below; look for the :star: for specific details.
+
+### 1. Concept Stage: Idea Generation 💡
+
+The first step in the game production pipeline is brainstorming and refining your game concept.
+
+#### A. Brainstorming Your Game
+
+Begin by brainstorming ideas for your crafting game. Consider the following guiding questions to help define your game’s concept:
+
+- What types of crafting interactions will engage players and provide a meaningful challenge?
+- Who is the target audience for this game? What characteristics will appeal to them?
+- What is the main objective of your game? What actions must players take to succeed?
+- What are the win conditions? How does a player achieve success and complete the game?
+- What is the theme of your game?
+
+> [!TIP] 
+> Consider creating a player persona for your target audience. This optional step can help narrow the scope of your game by identifying who you're designing for, and providing insight into preferences, motivations, and behaviors.
+
+#### Focusing Your Game's Mechanics
+
+To keep your design focused, narrow your game down to one primary mechanic (e.g., resource collection, crafting recipes, environmental interactions). Limiting your game to a single, core mechanic will help you create a more cohesive and manageable gameplay experience.
+
+In the game production pipeline, a key deliverable of the Concept Stage is the **game design brief**. This document summarizes the overall game design, highlighting the essential elements that need to be created and developed. It is crucial for everyone involved in the production, to review and fully understand the details and objectives outlined in the brief. This understanding will provide a solid foundation for your work and ensure clarity on what needs to be developed for the prototype.
+
+2. **Develop Your Game Design Brief as a Wiki Page**
+   - Build upon the baseline [**brief**](https://github.com/CSG-3523/.github/wiki/Game-Brief)
+   - Complete a [**game design brief using the following template**](https://github.com/csg-utulsa/.github/wiki/Game-Brief-Template)
+   - Write this brief as a [**wiki page**](https://github.com/csg-utulsa/.github/wiki/Github-Wikis) in your project repository. [**See wiki instructions here**](https://github.com/csg-utulsa/.github/wiki/Github-Wikis). 
+3. **Submit for Review**
+   - The **game design brief is due 4 weeks** before the final game prototype
+   - Your instructor will review the brief and provide feedback to **ensure that your game concept aligns with the assignment's scope**.
+4. **Reference the Game Design Brief**
+   - Use the completed game design brief as a roadmap, guiding every aspect of your development process. 
+   - It should inform your decisions and help ensure consistency as you move forward.
+
+## 2. Pre-Production: Planning 📋
+After reviewing the game design brief, the development team begins mapping out the core mechanics of your game using flow charts. Flow charts are visual diagrams that depict the sequence of steps and decisions within the game process. This structured approach ensures all aspects of the game mechanics are clearly understood and integrated, providing a solid foundation for development.
+
+### :star: A. Creating the Main Gameplay Flowcharts
+
+1. Outline the Core Gameplay Mechanics
+   - Based on your game design brief, identify the key gameplay elements and loops.
+   - Consider how players will interact with crafting systems, puzzles, and environmental elements.
+
+2. **Use Draw.io for Flowchart Creation**
+   - Use [**draw.io**](https://www.draw.io/) to create visual flowcharts that represent your puzzle game’s mechanics.
+   - Ensure the flowcharts are clear, simple, and represent the player's journey and puzzle-solving process.
+
+3. **Create Key Flowcharts**
+     - **Crafting Flowchart:** Visualize how players interact with crafting systems and the progression of item creation.
+     - **Puzzle Flowchart:** Map out how puzzles are integrated with crafting and resource collection.
+     - **Resource Management Flowchart**: Outline how resources are collected, managed, and utilized in crafting.
+   
+4. **Document Flowcharts in the Wiki**
+   - Post your flowcharts in a dedicated [**wiki page**](https://github.com/csg-utulsa/.github/wiki/Github-Wikis)  titled **"Gameplay Flowcharts"**.
+   - Include a brief description of each flowchart and how it fits into the overall game design.
+
+5. **Use Flowcharts to Guide Development**
+   - Refer to these flowcharts during the development process to ensure that the gameplay mechanics are correctly implemented.
+   - Adjust the flowcharts as necessary if gameplay elements evolve during prototyping.
+
+6. **Submit for Review**
+   - The **gameplay flowchart is due 3 weeks** before the final game prototype
+   - Your instructor will review the flowchart and provide feedback to **ensure that your game concept aligns with the assignment's scope**.
+
+7. **Reference the Gameplay Flowchart**
+   - Use the completed game design brief guide in the development process. 
+   - It should identify classes and methods that need to be implemented. 
+
+## 3. Pre-Production: Prototyping 📐
+
+Once you have a solid understanding of how your puzzle game will work, it's time to start building! The goal of this phase is to focus on functionality, getting the core gameplay elements working smoothly and efficiently. Ensure that your game includes the following:
+
+1. **Implement Required Game Mechanics**
+   - These mechanics should drive core gameplay and puzzle interaction.
+   - See [**required game mechanics**](Puzzle-Game#required-game-mechanics) above
+
+1. **Design in 16:9 Aspect Ratio**
+   - Your game **must be designed in a 16:9 aspect ratio** to ensure optimal viewing across different screen sizes.
+
+3. **Two Playable Levels**
+   - Your game must have **two distinct playable levels**.
+     - Each level should introduce unique puzzles or challenges that require different problem-solving approaches from the player.
+     - Ensure that these levels progressively increase in difficulty or complexity, offering a variety of puzzle mechanics.
+
+4. **Start Scene**
+   - Create a **Start Scene** that introduces the player to the game, its concept, and basic controls.
+     - Include instructions on how to navigate the puzzles and what the player's objectives are.
+
+5. **End Scene**
+   - Implement an **End Scene** that provides a satisfying conclusion to the game.
+     - You may include a summary of the player’s performance, such as the total time taken to complete the puzzles or a completion percentage.
+
+---
+
+## EXPORTING WEBGL BUILD
+
+1. **Open File > Build Settings…** in Unity
+   - Ensure that the `Start_SplashScreen` scene is in the first (0) position in the build list. 
+   - Choose WebGL as the platform and click `Switch Platform` to load the WebGL settings
+   - Open the Build Settings and set the **resolution** to
+     - Minimum of **640x385** or a Maximum of **1280x720** to ensure a 16:9 format that fits the webpage. 
+   - Choose `Build and Run` to build and preview the game
+     - Create a `WebGLBuild` folder to save the build files, **this should be outside the Unity project folder**
+   - Test the game in the run preview, **verifying that all features are working correctly**.
+
+> [!NOTE]
+The first scene in the build list must be the game's starting scene, which in our case is `Start_SplashScreen`. This will load by default. Since scene navigation is handled dynamically by referencing scene names, the order of the remaining scenes in the build list is irrelevant. You can reorder scenes by simply dragging and dropping them. Additionally, remove any unneeded scenes from the build list to optimize performance and reduce file size.
+
+2. Zip the contents of the `WebGLBuild` folder
+   - Open `WebGLBuild` folder
+   - Select all the contents of the folder, including the internal `Build` folder and other files. 
+   - Zip the selected content, and name the zip using the assignment naming standards. 
+     - For example, if you completed the project on Oct 15th and your last name is Dent, then the zip file should be named `2024-10-15_Dent_PuzzleGame.zip`
+
+> [!Warning]
+> Build files are typically large and not suited for GitHub. Unity’s `.gitignore` also excludes build files by default. Usually, these builds are saved elsewhere, but for this small project, we're placing the `WebGLBuild` folder in the root of the repository to keep related files together. This bypasses the ignore rule, though it’s not recommended. Additionally, when compressing for itch.io, avoid zipping the entire folder, as Windows creates an extra subfolder that itch.io won’t recognize. Instead, select the folder’s contents before zipping.
+
+## SUBMITTING THE EXERCISE
+3. **Push changes to GitHub:**
+   - Test the game by running it and **verifying that all features are working correctly**.
+   - Push final commits and ensure all branches have been **merged** back into `main`.
+
+4. Upload the game to itch.io 
+   - Following the [**Submitting to Itch.io**](https://github.com/csg-utulsa/.github/wiki/WebGL-Itch.io-Submission) criteria
+   - Ensure that the **proper setting and requirements are met** for the itch.io submission
+   - Ensure that the game page is **public**
+
+5. Submit the following in the course LMS:
+   - **GitHub URL** to the main branch.
+   - **Itch.io URL** to the WebGL game.
+
+
+
